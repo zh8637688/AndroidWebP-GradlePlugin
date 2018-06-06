@@ -1,0 +1,32 @@
+*.iml
+.gradle
+.idea/
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+!.idea/codeStyleSettings.xml
+.DS_Store
+/build
+/captures
+.vscode/
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# Intellij
+*.iml
