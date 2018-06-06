@@ -1,4 +1,4 @@
-package cz.webp;
+package cz.gradleplugin.android.webp;
 
 /**
  * @author haozhou

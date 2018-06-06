@@ -1,4 +1,4 @@
-package cz.webp.tasks;
+package cz.gradleplugin.android.webp.tasks;
 
 import com.android.build.gradle.AppExtension;
 import com.android.build.gradle.LibraryExtension;
@@ -19,8 +19,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import cz.webp.WebPAndroidPlugin;
-import cz.webp.util.Logger;
+import cz.gradleplugin.android.webp.util.Logger;
+import cz.gradleplugin.android.webp.WebPAndroidPlugin;
 
 /**
  * @author haozhou

@@ -1,4 +1,4 @@
-package cz.webp.tasks;
+package cz.gradleplugin.android.webp.tasks;
 
 import org.gradle.api.Action;
 import org.gradle.api.DefaultTask;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import cz.webp.util.Logger;
+import cz.gradleplugin.android.webp.util.Logger;
 
 /**
  * @author haozhou
