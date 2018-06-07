@@ -30,6 +30,7 @@ import cz.gradleplugin.android.webp.util.Logger;
 public class DecompressTask extends DefaultTask {
     private String srcFilePath;
     private String dstDirPath;
+    private String succeedFlagPath;
 
     @InputFile
     public File getSrcFile() {
@@ -43,13 +44,17 @@ public class DecompressTask extends DefaultTask {
 
     @TaskAction
     public void decompressFile() throws Exception {
-        Logger.i("Start decompress file " + srcFilePath);
-        if (srcFilePath.endsWith("tar.gz")) {
-            decompressGzip(srcFilePath);
-        } else {
-            decompressZip(srcFilePath);
+        File succeedFlag = new File(succeedFlagPath);
+        if (!succeedFlag.exists()) {
+            Logger.i("Start decompress file " + srcFilePath);
+            if (srcFilePath.endsWith("tar.gz")) {
+                decompressGzip(srcFilePath);
+            } else {
+                decompressZip(srcFilePath);
+            }
+            succeedFlag.createNewFile();
+            Logger.i("Decompress finished.");
         }
-        Logger.i("Decompress finished.");
     }
 
     private void decompressGzip(String gzipFilePath) throws Exception {
@@ -168,6 +173,7 @@ public class DecompressTask extends DefaultTask {
         public void execute(DecompressTask decompressTask) {
             decompressTask.srcFilePath = downloadFilePath;
             decompressTask.dstDirPath = new File(downloadFilePath).getParent();
+            decompressTask.succeedFlagPath = decompressTask.dstDirPath + "/succeed";
         }
     }
 }
