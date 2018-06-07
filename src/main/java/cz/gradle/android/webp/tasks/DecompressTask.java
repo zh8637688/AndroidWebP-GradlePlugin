@@ -1,4 +1,4 @@
-package cz.gradleplugin.android.webp.tasks;
+package cz.gradle.android.webp.tasks;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
@@ -21,7 +21,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import cz.gradleplugin.android.webp.util.Logger;
+import cz.gradle.android.webp.util.Logger;
 
 /**
  * @author haozhou

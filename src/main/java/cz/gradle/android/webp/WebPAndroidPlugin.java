@@ -1,4 +1,4 @@
-package cz.gradleplugin.android.webp;
+package cz.gradle.android.webp;
 
 import com.android.build.gradle.AppExtension;
 import com.android.build.gradle.LibraryExtension;
@@ -17,10 +17,10 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import cz.gradleplugin.android.webp.tasks.ConvertTask;
-import cz.gradleplugin.android.webp.util.Logger;
-import cz.gradleplugin.android.webp.tasks.DecompressTask;
-import cz.gradleplugin.android.webp.tasks.DownloadLibTask;
+import cz.gradle.android.webp.util.Logger;
+import cz.gradle.android.webp.tasks.ConvertTask;
+import cz.gradle.android.webp.tasks.DecompressTask;
+import cz.gradle.android.webp.tasks.DownloadLibTask;
 
 /**
  * @author haozhou
