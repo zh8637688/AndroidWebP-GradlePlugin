@@ -19,8 +19,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import cz.gradleplugin.android.webp.util.Logger;
 import cz.gradleplugin.android.webp.WebPAndroidPlugin;
+import cz.gradleplugin.android.webp.util.Logger;
 
 /**
  * @author haozhou
@@ -184,12 +184,10 @@ public class ConvertTask extends DefaultTask {
             Object androidExtension = project.getExtensions().findByName("android");
             if (project.getPlugins().hasPlugin(WebPAndroidPlugin.APP_PLUGIN)) {
                 AppExtension appExtension = (AppExtension) androidExtension;
-                String name = appExtension.getDefaultConfig().getName();
-                sourceSet = (DefaultAndroidSourceSet) appExtension.getSourceSets().getByName(name);
+                sourceSet = (DefaultAndroidSourceSet) appExtension.getSourceSets().getByName("main");
             } else if (project.getPlugins().hasPlugin(WebPAndroidPlugin.LIB_PLUGIN)) {
                 LibraryExtension libraryExtension = (LibraryExtension) androidExtension;
-                String name = libraryExtension.getDefaultConfig().getName();
-                sourceSet = (DefaultAndroidSourceSet) libraryExtension.getSourceSets().getByName(name);
+                sourceSet = (DefaultAndroidSourceSet) libraryExtension.getSourceSets().getByName("main");
             }
 
             if (sourceSet != null) {
