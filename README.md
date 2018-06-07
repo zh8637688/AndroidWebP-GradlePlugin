@@ -8,6 +8,37 @@
 4. 自动构建过程中，图片转换时机位于mergeResources之前，避免图片被重复处理多次；
 
 ### 接入：
+1. 引用插件
+    ```
+    buildscript {
+        repositories {
+            maven {
+                url 'https://dl.bintray.com/zh8637688/maven/'
+            }
+        }
+        dependencies {
+            classpath 'cz.gradle.android:webp:0.0.1'
+        }
+    }
+    ```
+2. 应用plugin
+    ```
+    apply plugin: 'cz.webp'
+    ```
+3. 配置
+    ```
+    WebPAndroid {
+        autoConvert true
+        quality 75
+    }
+    ```
+
+4. 构建
+    ```
+    autoConvert = true:         ./gradlew build
+
+    autoConvert = false:        ./gradlew convert***WebP
+    ```
 
 ### 配置：
 配置名称 |  类型 | 默认值 | 说明

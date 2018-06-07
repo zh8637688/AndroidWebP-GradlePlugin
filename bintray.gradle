@@ -1,6 +1,7 @@
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
+group = 'cz.gradle.android'
 version = '0.0.1'
 
 task sourcesJar(type: Jar) {
@@ -76,7 +77,7 @@ bintray {
     configurations = ['archives']
     publish = true
     pkg {
-        repo = 'cz.gradle.android'
+        repo = 'maven'
         name = 'webp'
         vcsUrl = 'https://github.com/zh8637688/AndroidWebP-GradlePlugin.git'
         labels = ['gradle', 'plugin', 'android', 'webp']
